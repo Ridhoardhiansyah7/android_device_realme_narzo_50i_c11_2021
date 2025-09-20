@@ -7,9 +7,21 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 RELAX_USES_LIBRARY_CHECK=true
 
+# resetprop & repacktools
+TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_LIBRESETPROP := true
+
+# Debugging
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
+
+# Kernel module
+TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.ko trace_noschedule_bytedancy.ko trace_runqlat_bytedancy.ko"
+
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := RMX3235 by Aflahal
+TW_DEVICE_VERSION := RMX323X By Aflahal
 TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := id
 TW_INPUT_BLACKLIST := "hbtp_vm"
@@ -28,20 +40,14 @@ TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 #TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 
-# Fix Clock,Cpu temp, battery persentase position
+# TWRP Fix Clock,Cpu temp, battery persentase position
 TW_STATUS_ICONS_ALIGN := center
 TW_CUSTOM_CPU_POS := 50
 TW_CUSTOM_CLOCK_POS := 300
 TW_CUSTOM_BATTERY_POS := 800
 
-# resetprop & repacktools
-TW_INCLUDE_RESETPROP := true
-TW_INCLUDE_REPACKTOOLS := true
-TW_INCLUDE_LIBRESETPROP := true
-
-# Debugging
-TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
-
-# Kernel module
-TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.ko trace_noschedule_bytedancy.ko trace_runqlat_bytedancy.ko"
+#PBRP Configuration
+PBRP_MAINTAINER := Aflahal
+PBRP_DEVICE_NAME := RMX323X
+PBRP_DEFAULT_LANGUAGE := id
+PBRP_BUILD_TYPE := Unofficial
