@@ -86,6 +86,15 @@ PLATFORM_SECURITY_PATCH := 2022-06-05
 PLATFORM_VERSION := 11.0.0
 VENDOR_SECURITY_PATCH := 2022-06-05
 
+# FBE & metadata encryption
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_FBE := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_METADATA_ENCRYPTION := true
+TW_USE_FSCRYPT_POLICY := 1
+BOARD_USES_METADATA_PARTITION := true
+TW_USE_VOLD_DECRYPT := true
+
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Recovery
@@ -99,7 +108,18 @@ TARGET_USES_MKE2FS := true
 TARGET_RECOVERY_DEVICE_MODULES += \
     libcap \
     libion \
-    libxml2
+    libxml2 \
+    libhardware \
+    libcryptfs \
+    libcrypto \
+    libkeymaster_messages \
+    libkeymaster3device \
+    libsoftkeymasterdevice \
+    libkeymaster4 \
+    libpuresoftkeymasterdevice \
+    ashmemd_aidl_interface-cpp \
+    libashmemd_client
+
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
