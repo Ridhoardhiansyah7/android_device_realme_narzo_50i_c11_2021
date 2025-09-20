@@ -117,6 +117,5 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 ## Inherit partitions flags
 include device/realme/RMX3235/partitions.mk
 
-#flags
-include device/realme/RMX3235/TW_flags.mk
-
+# Recovery flags
+include device/realme/RMX3235/recovery_flags.mk
