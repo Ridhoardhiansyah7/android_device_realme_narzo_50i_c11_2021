@@ -40,7 +40,6 @@ on fs
     copy /dev/block/by-name/sysdump /dev/urandom
 
 on boot
-    start boot-hal-2-1
     start health-hal-2-1
 
 on post-fs
