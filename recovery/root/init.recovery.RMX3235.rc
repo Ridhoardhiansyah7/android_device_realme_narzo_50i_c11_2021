@@ -27,6 +27,7 @@ on init
     mount tracefs tracefs /sys/kernel/tracing
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
+    # start set_permissive
 
 on fs
 # Sensor
@@ -39,6 +40,46 @@ on fs
     copy /dev/block/by-name/sysdump /dev/urandom
 
 on boot
-    start boot-hal-1-1
+    start boot-hal-2-1
     start health-hal-2-1
-    setprop sys.usb.config adb
+
+on post-fs
+    start boot-hal-1-1
+
+on property:ro.crypto.state=unencrypted
+    start prepdecrypt
+
+on property:ro.crypto.state=unsupported
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+on property:ro.crypto.state=unencrypted
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+on property:twrp.decrypt.done=true
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+on property:ro.crypto.fs_crypto_blkdev=*
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+service prepdecrypt /system/bin/prepdecrypt.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
