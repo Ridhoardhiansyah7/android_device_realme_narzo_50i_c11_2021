@@ -40,10 +40,9 @@ on fs
     copy /dev/block/by-name/sysdump /dev/urandom
 
 on boot
-    start health-hal-2-1
-
-on post-fs
     start boot-hal-1-1
+    start health-hal-2-1
+    setprop sys.usb.config adb
 
 on property:ro.crypto.state=unencrypted
     start prepdecrypt
