@@ -44,8 +44,16 @@ on boot
     start health-hal-2-1
     setprop sys.usb.config adb
 
-on property:ro.crypto.state=unencrypted
+
+on property:ro.crypto.state=encrypted
     start prepdecrypt
+
+on property:twrp.decrypt.done=true
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
 
 on property:ro.crypto.state=unsupported
     stop sbinqseecomd
@@ -55,13 +63,6 @@ on property:ro.crypto.state=unsupported
     stop hwservicemanager
 
 on property:ro.crypto.state=unencrypted
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
-on property:twrp.decrypt.done=true
     stop sbinqseecomd
     stop keymaster-4-0
     stop gatekeeper-1-0
