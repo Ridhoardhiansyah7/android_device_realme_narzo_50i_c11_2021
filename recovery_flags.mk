@@ -26,6 +26,7 @@ TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := id
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/sprd_backlight/brightness"
+TW_DEFAULT_BRIGHTNESS := 255
 TW_INCLUDE_FASTBOOTD := true
 TW_INCLUDE_NTFS_3G := true
 TW_USE_TOOLBOX := true
@@ -34,7 +35,8 @@ TW_USE_EXTERNAL_STORAGE := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_TWRPAPP := true
 TW_NO_BIND_SYSTEM := true
-TW_NO_SCREEN_BLANK := false
+TW_NO_SCREEN_BLANK := true
+
 TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
@@ -48,7 +50,7 @@ TW_CUSTOM_BATTERY_POS := 800
 
 #PBRP Configuration
 MAINTAINER := Aflahal
-# PB_TORCH_PATH := "/sys/class/"
+PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
 PBRP_DEVICE := RMX323X
-PBRP_DEFAULT_LANGUAGE := id
+PBRP_DEFAULT_LANGUAGE := in
 BETA_BUILD := true
