@@ -1,4 +1,4 @@
-# TWRP / PBRP device tree for Realme RMX3231/ RMX3235 (C11 2021 / Narzo 50i)
+## TWRP / PBRP / OFOX device tree for Realme RMX3231/ RMX3235 (C11 2021 / Narzo 50i)
 
 ## Device specification
 
@@ -16,9 +16,42 @@ Display | 720 x 1600 pixels, 20:9 ratio (269 ppi density)
 Rear Camera  | 8 MP
 Front Camera | 5 MP
 
-
 Specifications in detail
-See [We look there](https://m.gsmarena.com/realme_c11_(2021)-10890.php)
+See [GsmArea](https://m.gsmarena.com/realme_c11_(2021)-10890.php)
 
-Real Source
-See [We look there](https://github.com/depesh1977/Realme_c11)
+
+## Features
+Blocking checks
+- [X] Correct screen/recovery size
+- [X] Working Touch, screen
+- [X] Backup to internal/microSD
+- [X] Restore from internal/microSD
+- [X] reboot to system
+- [X] ADB
+- [X] Fastbootd
+
+Medium checks
+- [X] update.zip sideload
+- [X] UI colors (red/blue inversions)
+- [X] Screen goes off and on
+- [X] F2FS/EXT4 Support, exFAT/NTFS where supported
+- [X] all important partitions listed in mount/backup lists
+- [X] backup/restore to/from external (USB-OTG) storage
+- [X] backup/restore to/from adb
+- [ ] decrypt /data
+- [X] Correct date
+
+Minor checks
+- [X] MTP export
+- [X] reboot to bootloader
+- [X] reboot to recovery
+- [X] poweroff
+- [X] battery level
+- [X] temperature
+- [ ] encrypted backups
+- [X] input devices via USB (USB-OTG) - keyboard, mouse and disks
+- [X] USB mass storage export
+- [X] set brightness
+- [ ] vibrate
+- [X] screenshot
+- [X] partition SD card
