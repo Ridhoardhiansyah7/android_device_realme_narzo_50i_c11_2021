@@ -4,7 +4,7 @@
 
 Basic   | Spec Sheet
 -------:|:------------------------
-CPU     | 4x Cortex-A55 1.2 ГГц, 4x Cortex-A55 1.6 ГГц
+CPU     | 4x1.6 GHz Cortex-A55 & 4x1.2 GHz Cortex-A55
 CHIPSET | Spreadtrum SC9863A
 GPU     | PowerVR GE8322
 Memory  | 2GB/4GB
@@ -17,7 +17,7 @@ Rear Camera  | 8 MP
 Front Camera | 5 MP
 
 Specifications in detail
-See [GsmArea](https://m.gsmarena.com/realme_c11_(2021)-10890.php)
+See [GsmArea](https://www.gsmarena.com/realme_c11_(2021)-10890.php)
 
 
 ## Features
@@ -50,8 +50,9 @@ Minor checks
 - [X] temperature
 - [ ] encrypted backups
 - [X] input devices via USB (USB-OTG) - keyboard, mouse and disks
-- [X] USB mass storage export
+- [ ] USB mass storage export (Not Supported)
 - [X] set brightness
 - [ ] vibrate
+- [ ] Flashlight
 - [X] screenshot
 - [X] partition SD card
