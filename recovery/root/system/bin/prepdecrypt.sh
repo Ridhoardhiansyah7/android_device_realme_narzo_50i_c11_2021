@@ -339,13 +339,13 @@ if [ "$sdkver" -ge 26 ]; then
 
 		BUILDPROP="build.prop"
 		TEMPSYS=/s
-		syspath="/dev/block/mapper/by-name/system$suffix"
+		syspath="/dev/block/mapper/system$suffix"
 
 		if [ "$sdkver" -ge 29 ]; then
 			SAR=true
 			MNT_VENDOR=true
 			TEMPVEN=/v
-			venpath="/dev/block/mapper/by-name/vendor$suffix"
+			venpath="/dev/block/mapper/vendor$suffix"
 
 			temp_mount "$TEMPVEN" "vendor" "$venpath"
 
