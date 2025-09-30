@@ -305,7 +305,7 @@ if [ -n "$ab_device" ]; then
 	log_print 2 "Current boot slot: $suffix"
 fi
 
-recpath="/dev/block/by-name/recovery$suffix"
+recpath="dev/block/by-name/recovery$suffix"
 check_setpatch_override
 if [ -e "$recpath" ]; then
 	log_print 2 "Device has recovery partition!"
@@ -339,13 +339,13 @@ if [ "$sdkver" -ge 26 ]; then
 
 		BUILDPROP="build.prop"
 		TEMPSYS=/s
-		syspath="/dev/block/mapper/system$suffix"
+		syspath="dev/block/mapper/system$suffix"
 
 		if [ "$sdkver" -ge 29 ]; then
 			SAR=true
 			MNT_VENDOR=true
 			TEMPVEN=/v
-			venpath="/dev/block/mapper/vendor$suffix"
+			venpath="dev/block/mapper/vendor$suffix"
 
 			temp_mount "$TEMPVEN" "vendor" "$venpath"
 
