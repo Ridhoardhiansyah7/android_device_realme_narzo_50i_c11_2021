@@ -21,7 +21,7 @@ TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := RMX323X By Aflahal
+TW_DEVICE_VERSION := "RMX323X By Aflahal"
 TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := id
 TW_INPUT_BLACKLIST := "hbtp_vm"
@@ -35,8 +35,7 @@ TW_USE_EXTERNAL_STORAGE := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_TWRPAPP := true
 TW_NO_BIND_SYSTEM := true
-TW_NO_SCREEN_BLANK := true
-
+TW_NO_SCREEN_BLANK := false
 TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
@@ -49,8 +48,19 @@ TW_CUSTOM_CLOCK_POS := 300
 TW_CUSTOM_BATTERY_POS := 800
 
 #PBRP Configuration
-MAINTAINER := Aflahal
-PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
+PB_MAINTAINER := Aflahal
+PB_BUILD_AUTHOR := Aflahal
+PB_VERSION := "Android-11 by Aflahal"
 PBRP_DEVICE := RMX323X
-PBRP_DEFAULT_LANGUAGE := in
+PBRP_DEFAULT_LANGUAGE := id
 BETA_BUILD := true
+PB_TORCH_PATH := 
+PB_VIBRATOR_PATH := 
+
+# OrangeFox Configuration
+FOX_BUILD_DEVICE := RMX323X
+FOX_MAINTAINER := Aflahal
+FOX_BUILD_AUTHOR := Aflahal
+FOX_VERSION := "Android-11 by Aflahal"
+OF_DEFAULT_LANG := id
+OF_VIBRATOR_PATH := 
