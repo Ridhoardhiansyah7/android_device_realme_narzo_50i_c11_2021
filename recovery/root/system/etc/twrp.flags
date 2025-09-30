@@ -30,11 +30,11 @@
 /wcnmodem               emmc     /dev/block/by-name/wcnmodem                flags=backup=1;slotselect
 /gnssmodem        		  emmc     /dev/block/by-name/gpsgl			              flags=backup=1;slotselect
 /gnssbdmodem            emmc     /dev/block/by-name/gpsbd                   flags=backup=1;slotselect
-/miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="Miscdata (S/N)"
+/miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="Miscdata (S/N & UnlockFlag)"
 /boot                   emmc     /dev/block/by-name/boot                    flags=backup=1;display="Boot";flashimg=1        
-/metadata              	ext4     /dev/block/by-name/metadata              	flags=backup=1;display="Metadata"
-/cache                 ext4     /dev/block/by-name/cache                  flags=backup=1;display="Cache"
-/prodnv            	   ext4     /dev/block/by-name/prodnv                flags=backup=1;flashimg=1;display="ProdNV" 	
+/metadata               ext4     /dev/block/by-name/metadata              	flags=backup=1;display="Metadata"
+/cache                  ext4     /dev/block/by-name/cache                   flags=backup=1;display="Cache";wipeingui
+/prodnv            	    ext4     /dev/block/by-name/prodnv                  flags=backup=1;flashimg=1;display="ProdNV" 	
 
 # Removable storage
 /external_sd	        vfat     /dev/block/mmcblk1p1	/dev/block/mmcblk1			flags=fsflags=utf8;storage;wipeingui;removable
