@@ -33,7 +33,8 @@
 /miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="Miscdata (S/N)"
 /boot                   emmc     /dev/block/by-name/boot                    flags=backup=1;display="Boot";flashimg=1        
 /metadata              	ext4     /dev/block/by-name/metadata              	flags=backup=1;display="Metadata"
-/prodnv            	    ext4     /dev/block/by-name/prodnv                  flags=backup=1;flashimg=1;display="ProdNV" 	
+/cache                 ext4     /dev/block/by-name/cache                  flags=backup=1;display="Cache"
+/prodnv            	   ext4     /dev/block/by-name/prodnv                flags=backup=1;flashimg=1;display="ProdNV" 	
 
 # Removable storage
 /external_sd	        vfat     /dev/block/mmcblk1p1	/dev/block/mmcblk1			flags=fsflags=utf8;storage;wipeingui;removable
