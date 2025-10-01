@@ -40,5 +40,6 @@ product /product ext4 ro,barrier=1 wait,avb=vbmeta,logical,first_stage_mount,slo
 /dev/block/by-name/odmko                 /odmko              ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
 /dev/block/by-name/cache                 /cache              ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check
 
-/dev/block/by-name/userdata              /data               f2fs    noatime,nosuid,nodev,discard,inline_xattr,inline_data latemount,wait,check,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption,reservedsize=128M,checkpoint=fs,formattable
+/dev/block/by-name/userdata             /data                f2fs   noatime,nosuid,nodev,discard,wait,check,formattable
+
 /dev/block/by-name/prodnv                /prodnv             ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc     wait,check
