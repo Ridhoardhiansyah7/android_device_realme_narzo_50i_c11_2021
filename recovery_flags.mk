@@ -38,7 +38,6 @@ TW_NO_BIND_SYSTEM := true
 TW_NO_SCREEN_BLANK := false
 TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 #TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 
 # TWRP Fix Clock,Cpu temp, battery persentase position
