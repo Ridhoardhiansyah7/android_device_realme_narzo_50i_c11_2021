@@ -24,6 +24,7 @@ TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := id
 TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_NO_HAPTICS := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/sprd_backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 300
 TW_MAX_BRIGHTNESS := 4000
