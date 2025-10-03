@@ -21,12 +21,12 @@ TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := "RMX323X By Aflahal"
 TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := id
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/sprd_backlight/brightness"
-TW_DEFAULT_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 300
+TW_MAX_BRIGHTNESS := 4000
 TW_INCLUDE_FASTBOOTD := true
 TW_INCLUDE_NTFS_3G := true
 TW_USE_TOOLBOX := true
@@ -47,9 +47,6 @@ TW_CUSTOM_CLOCK_POS := 300
 TW_CUSTOM_BATTERY_POS := 800
 
 #PBRP Configuration
-PB_MAINTAINER := Aflahal
-PB_BUILD_AUTHOR := Aflahal
-PB_VERSION := "Android-11 by Aflahal"
 PBRP_DEVICE := RMX323X
 PBRP_DEFAULT_LANGUAGE := id
 BETA_BUILD := true
@@ -58,8 +55,11 @@ PB_VIBRATOR_PATH :=
 
 # OrangeFox Configuration
 FOX_BUILD_DEVICE := RMX323X
-FOX_MAINTAINER := Aflahal
-FOX_BUILD_AUTHOR := Aflahal
-FOX_VERSION := "Android-11 by Aflahal"
 OF_DEFAULT_LANG := id
 OF_VIBRATOR_PATH := 
+
+# Maintainer
+BOARD_MAINTAINER_NAME := RMX323x by Aflahal
+TW_DEVICE_VERSION := $(BOARD_MAINTAINER_NAME)
+PB_MAIN_VERSION := $(BOARD_MAINTAINER_NAME)
+OF_MAINTAINER := $(BOARD_MAINTAINER_NAME)
