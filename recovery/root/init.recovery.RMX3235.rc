@@ -1,5 +1,6 @@
 #add for board init.rc for recovery mode
 import /init.recovery.common.rc
+
 service logd /system/bin/logd
     socket logd stream 0666 logd logd
     socket logdr seqpacket 0666 logd logd
@@ -27,53 +28,36 @@ on init
     mount tracefs tracefs /sys/kernel/tracing
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
-    # start set_permissive
 
 on fs
+# Try Decrypt data
+    start prepdecrypt
 # Sensor
     insmod /socko/adaptive-ts.ko
     insmod /socko/mali_kbase.ko
-
 # Mix device-specific information into the entropy pool
    # copy /proc/cmdline /dev/urandom
    # copy /prop.default /dev/urandom
     copy /dev/block/by-name/sysdump /dev/urandom
 
 on boot
+    start keymaster-4-1
+    start gatekeeper-1-0
     start boot-hal-1-1
     start health-hal-2-1
     setprop sys.usb.config adb
 
-on property:ro.crypto.state=unencrypted
-    start prepdecrypt
+on property:crypto.ready=1 && property:ro.crypto.state=encrypted
+    start keymaster-4-1
+    start gatekeeper-1-0
 
-on property:ro.crypto.state=unsupported
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
+on property:crypto.ready=1 && property:hwservicemanager.ready=true
+    start keymaster-4-1
+    start gatekeeper-1-0
 
-on property:ro.crypto.state=unencrypted
-    stop sbinqseecomd
-    stop keymaster-4-0
+on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted || property:twrp.decrypt.done=true
+    stop keymaster-4-1
     stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
-on property:twrp.decrypt.done=true
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
-on property:ro.crypto.fs_crypto_blkdev=*
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
 
 service prepdecrypt /system/bin/prepdecrypt.sh
     user root
@@ -81,3 +65,15 @@ service prepdecrypt /system/bin/prepdecrypt.sh
     disabled
     oneshot
     seclabel u:r:recovery:s0
+
+service keymaster-4-1 /vendor/bin/hw/android.hardware.keymaster@4.1-unisoc.service
+     user root
+     group root drmrpc
+     disabled
+     seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty /data/misc/gatekeeper
+     user root
+     group root
+     disabled
+     seclabel u:r:recovery:s0
