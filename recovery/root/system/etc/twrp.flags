@@ -4,21 +4,26 @@
 # <mount_point>      <fstype>  <device>        <device2>                  <flags>
 
 # Dynamic partitions
-/system_image            emmc     /dev/block/mapper/system                     flags=display="System image";slotselect;backup=1;flashimg=1
-/system                  ext4     /dev/block/mapper/system                     flags=display="System";slotselect;backup=1;wipeingui
-/system_ext_image        emmc     /dev/block/mapper/system_ext                 flags=display="System_ext image";slotselect;backup=1;flashimg=1
-/system_ext              ext4     /dev/block/mapper/system_ext                 flags=display="System_ext";slotselect;backup=1;wipeingui
-/product_image           emmc     /dev/block/mapper/product                    flags=display="Product image";slotselect;backup=1;flashimg=1
-/product                 ext4     /dev/block/mapper/product                    flags=display="Product";slotselect;backup=1;wipeingui
-/vendor_image            emmc     /dev/block/mapper/vendor                     flags=display="Vendor image";slotselect;backup=1;flashimg=1
-/vendor                  ext4     /dev/block/mapper/vendor                     flags=display="Vendor";slotselect;backup=1;wipeingui
-/super                   emmc     /dev/block/by-name/super                     flags=display="Super";backup=1;flashimg=1
+/super                  emmc     /dev/block/by-name/super                   flags=display="Super";backup=1;flashimg=1
+/system_image           emmc     /dev/block/mapper/system                   flags=display="System image";slotselect;backup=1;flashimg=1
+/system_ext_image       emmc     /dev/block/mapper/system_ext               flags=display="System_ext image";slotselect;backup=1;flashimg=1
+/product_image          emmc     /dev/block/mapper/product                  flags=display="Product image";slotselect;backup=1;flashimg=1
+/vendor_image           emmc     /dev/block/mapper/vendor                   flags=display="Vendor image";slotselect;backup=1;flashimg=1
+/system                 ext4     /dev/block/mapper/system                   flags=display="System";slotselect;backup=1;wipeingui
+/system_ext             ext4     /dev/block/mapper/system_ext               flags=display="System_ext";slotselect;backup=1;wipeingui
+/product                ext4     /dev/block/mapper/product                  flags=display="Product";slotselect;backup=1;wipeingui
+/vendor                 ext4     /dev/block/mapper/vendor                   flags=display="Vendor";slotselect;backup=1;wipeingui
 
 # Other
 /spl                    emmc     /dev/block/mmcblk0boot0                    flags=display=spl;backup=1
 /spl_bk                 emmc     /dev/block/mmcblk0boot1                    flags=display=spl_bk;backup=1     
 /uboot                  emmc     /dev/block/by-name/uboot            		    flags=backup=1;display="UBoot";slotselect
+/miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="Miscdata (S/N & UnlockFlag)"
+/misc                   emmc     /dev/block/by-name/misc                    flags=backup=1;display="Misc"
 /tos                    emmc     /dev/block/by-name/trustos                 flags=backup=1;display="Trustos";slotselect
+/boot                   emmc     /dev/block/by-name/boot                    flags=backup=1;display="Boot";flashimg=1
+/dtb                    emmc     /dev/block/by-name/dtb                     flags=backup=1;display="Dtb"
+/dtbo                   emmc     /dev/block/by-name/dtbo                    flags=backup=1;display="Dtbo";flashimg=1
 /ltedsp                 emmc     /dev/block/by-name/l_ldsp                  flags=backup=1;subpartitionof=/ltemodem;slotselect
 /ltegdsp                emmc     /dev/block/by-name/l_gdsp			            flags=backup=1;subpartitionof=/ltemodem;slotselect
 /ltemodem               emmc     /dev/block/by-name/l_modem                 flags=backup=1;display="Modem (IMEI)";slotselect
@@ -30,12 +35,12 @@
 /wcnmodem               emmc     /dev/block/by-name/wcnmodem                flags=backup=1;slotselect
 /gnssmodem        		  emmc     /dev/block/by-name/gpsgl			              flags=backup=1;slotselect
 /gnssbdmodem            emmc     /dev/block/by-name/gpsbd                   flags=backup=1;slotselect
-/miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="Miscdata (S/N & UnlockFlag)"
-/boot                   emmc     /dev/block/by-name/boot                    flags=backup=1;display="Boot";flashimg=1        
-/metadata               ext4     /dev/block/by-name/metadata              	flags=backup=1;display="Metadata"
-/cache                  ext4     /dev/block/by-name/cache                   flags=backup=1;display="Cache";wipeingui
 /prodnv            	    ext4     /dev/block/by-name/prodnv                  flags=backup=1;flashimg=1;display="ProdNV" 	
 
+/metadata               ext4     /dev/block/by-name/metadata              	flags=backup=1;display="Metadata"
+/cache                  ext4     /dev/block/by-name/cache                   flags=backup=1;display="Cache";wipeingui
+/data                   auto     /dev/block/by-name/userdata                flags=display="Data"
+
 # Removable storage
-/external_sd	        vfat     /dev/block/mmcblk1p1	/dev/block/mmcblk1			flags=fsflags=utf8;storage;wipeingui;removable
-/usb-otg	            vfat     /dev/block/sda1		/dev/block/sda				flags=storage;wipeingui;removable
+/external_sd	          auto     /dev/block/mmcblk1p1	/dev/block/mmcblk1	  flags=fsflags=utf8;storage;wipeingui;removable
+/usb-otg	              auto     /dev/block/sda1		/dev/block/sda				  flags=storage;wipeingui;removable
