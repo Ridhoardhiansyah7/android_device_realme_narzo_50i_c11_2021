@@ -136,6 +136,10 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster_messages \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_portable \
     $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster_portable \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice \
+    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libsoft_attestation_cert \
+    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libsoft_attestation_cert \
     $(TARGET_OUT_SHARED_LIBRARIES)/librpmbclient \
     $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/librpmbclient \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.0 \
