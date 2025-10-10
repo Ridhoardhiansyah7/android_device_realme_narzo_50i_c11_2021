@@ -250,8 +250,7 @@
             <name>IWcnVendorInterface</name>
             <instance>default</instance>
         </interface>
- 
-<fqname>@1.0::IWcnVendorInterface/default</fqname>
+        <fqname>@1.0::IWcnVendorInterface/default</fqname>
     </hal
     <hal format="hidl">
         <name>android.hardware.keymaster</name>
@@ -261,8 +260,7 @@
             <name>IKeymasterDevice</name>
             <instance>unisoc</instance>
         </interface>
-
-<fqname>@4.1::IKeymasterDevice/unisoc</fqname>
+        <fqname>@4.1::IKeymasterDevice/unisoc</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
@@ -272,8 +270,7 @@
             <name>IGatekeeper</name>
             <instance>trusty</instance>
         </interface>
-
-<fqname>@1.0::IGatekeeper/trusty</fqname>
+        <fqname>@1.0::IGatekeeper/trusty</fqname>
     </hal>
     <sepolicy>
         <version>30.0</version>
