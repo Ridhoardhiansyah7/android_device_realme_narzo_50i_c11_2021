@@ -117,59 +117,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libbase \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libbase \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libc++ \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libc++ \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libc \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libc \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libcutils \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libcutils \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libdl \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libdl \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libhardware \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libhardware \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libhidlbase \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libhidlbase \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/liblog \
-    $(TARGET_OUT_SHARED_LIBRARIES)/liblog \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libm \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libm \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libutils \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libutils \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libtrusty \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libtrusty \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkey \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkey \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libgatekeeper \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4 \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster4 \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41 \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster41 \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4support \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster4support \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4_1support \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster4_1support \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_messages \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster_messages \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_portable \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster_portable \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libpuresoftkeymasterdevice \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libsoft_attestation_cert \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libsoft_attestation_cert \
-    $(TARGET_OUT_SHARED_LIBRARIES)/librpmbclient \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/librpmbclient \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.0 \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.keymaster@4.0 \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1 \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.keymaster@4.1 \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster-V2-ndk_platform \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.keymaster-V2-ndk_platform \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.gatekeeper@1.0 \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.gatekeeper@1.0
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
 
 # Fix fastboot reboot
 TW_NO_FASTBOOT_BOOT := true
