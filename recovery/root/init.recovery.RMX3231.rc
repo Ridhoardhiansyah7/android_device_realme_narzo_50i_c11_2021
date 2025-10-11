@@ -28,9 +28,9 @@ service keystore /system/bin/keystore /data/misc/keystore
     seclabel u:r:recovery:s0
 
 service keymaster-4-1 /vendor/bin/hw/android.hardware.keymaster@4.1-unisoc.service
+     class early_hal
      user root
      group root drmrpc
-     disabled
      seclabel u:r:recovery:s0
 
 service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
