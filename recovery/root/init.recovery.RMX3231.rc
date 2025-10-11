@@ -76,7 +76,7 @@ on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted 
     stop gatekeeper-1-0
 
 on boot
-    install_keyring6
+    install_keyring
     start keymaster-4-1
     start gatekeeper-1-0
     start boot-hal-1-1
