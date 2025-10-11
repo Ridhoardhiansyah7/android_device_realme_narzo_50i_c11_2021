@@ -44,8 +44,8 @@ TARGET_CPU_VARIANT_RUNTIME := cortex-a55
 endif
 
 # 64-bit
-TARGET_SUPPORTS_64_BIT_APPS := false
-TARGET_IS_64_BIT := false
+TARGET_SUPPORTS_64_BIT_APPS := true
+TARGET_IS_64_BIT := true
 TARGET_USES_64_BIT_BINDER := true
 
 # Bootloader
