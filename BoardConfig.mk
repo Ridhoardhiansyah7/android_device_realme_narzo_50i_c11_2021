@@ -32,8 +32,8 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
 # 64-bit
-#TARGET_SUPPORTS_64_BIT_APPS := true
-#TARGET_IS_64_BIT := true
+TARGET_SUPPORTS_64_BIT_APPS := false
+TARGET_IS_64_BIT := false
 TARGET_USES_64_BIT_BINDER := true
 
 # Bootloader
@@ -127,8 +127,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libandroidicu 
     $(OUT_DIR)/target/product/$(PRODUCT_DEVICE)/obj/SHARED_LIBRARIES/libandroidicu_intermediates/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libandroidicu.so
 
-
-    
 
 ## Inherit partitions flags
 include device/realme/RMX3235/partitions.mk
