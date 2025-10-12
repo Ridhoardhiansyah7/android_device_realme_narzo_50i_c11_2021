@@ -46,7 +46,7 @@ endif
 TARGET_SUPPORTS_32_BIT_APPS := true
 # 64-bit
 TARGET_SUPPORTS_64_BIT_APPS := false
-#TARGET_IS_64_BIT := true
+TARGET_IS_64_BIT := false
 TARGET_USES_64_BIT_BINDER := true
 
 # Bootloader
