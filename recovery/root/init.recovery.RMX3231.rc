@@ -1,11 +1,8 @@
 #add for board init.rc for recovery mode
 import /init.recovery.common.rc
 
-on early-init
-    export LD_LIBRARY_PATH /system/lib:/vendor/lib
-
 on init
-    export LD_LIBRARY_PATH /system/lib:/vendor/lib
+    #export LD_LIBRARY_PATH /system/lib:/vendor/lib
     mount_all /system/etc/recovery.tmpfsdata.fstab
     setprop sys.usb.config adb
     mkdir /dev/cpuset/system-background
