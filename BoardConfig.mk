@@ -17,7 +17,7 @@
 DEVICE_PATH := device/realme/RMX3235
 
 # Architecture
-TARGET_BUILD_64BIT := false
+TARGET_BUILD_64BIT := true
 ifeq ($(TARGET_BUILD_64BIT), true)
 # Build 64-bit TWRP
 TARGET_ARCH := arm64
@@ -118,7 +118,6 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
-BOARD_HAS_NO_REAL_RECOVERY_PARTITION := true
 TARGET_USES_MKE2FS := true
 
 #Modules 
