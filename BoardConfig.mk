@@ -48,7 +48,6 @@ endif
 #TARGET_IS_64_BIT := true
 TARGET_USES_64_BIT_BINDER := true
 
-TW_FORCE_USE_32BIT := true
 TARGET_PREFER_32_BIT := true
 
 # Bootloader
