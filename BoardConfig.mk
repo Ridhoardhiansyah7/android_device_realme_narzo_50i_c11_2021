@@ -17,7 +17,7 @@
 DEVICE_PATH := device/realme/RMX3235
 
 # Architecture
-TARGET_BUILD_64BIT := true
+TARGET_BUILD_64BIT := false
 ifeq ($(TARGET_BUILD_64BIT), true)
 # Build 64-bit TWRP
 TARGET_ARCH := arm64
