@@ -17,7 +17,7 @@
 DEVICE_PATH := device/realme/RMX3235
 
 # Architecture
-TARGET_BUILD_64BIT := true
+TARGET_BUILD_64BIT := false
 ifeq ($(TARGET_BUILD_64BIT), true)
 # Build 64-bit TWRP
 TARGET_ARCH := arm64
@@ -33,6 +33,7 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
+TARGET_USES_64_BIT_BINDER := true
 else
 # Build 32-bit TWRP
 TARGET_ARCH := arm
@@ -41,9 +42,11 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := cortex-a55
+TARGET_USES_64_BIT_BINDER := true
 endif
 
-TARGET_USES_64_BIT_BINDER := true
+# APEX
+OVERRIDE_TARGET_FLATTEN_APEX := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := RMX3235
@@ -62,7 +65,7 @@ BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x05400000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -93,7 +96,7 @@ BOARD_AVB_BOOT_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 2
 
 
-# Latest patch
+# Latest firmware patch
 #PLATFORM_SECURITY_PATCH := 2024-05-09
 #PLATFORM_VERSION := 11.0.0
 #VENDOR_SECURITY_PATCH := 2024-05-09
@@ -131,12 +134,6 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
 # Fix fastboot reboot
 TW_NO_FASTBOOT_BOOT := true
     
-# Additional Libraries
-TARGET_RECOVERY_DEVICE_MODULES += \
-    libandroidicu 
-    $(OUT_DIR)/target/product/$(PRODUCT_DEVICE)/obj/SHARED_LIBRARIES/libandroidicu_intermediates/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib/libandroidicu.so
-
-
 ## Inherit partitions flags
 include device/realme/RMX3235/partitions.mk
 
