@@ -17,7 +17,7 @@
 DEVICE_PATH := device/realme/RMX3235
 
 # Architecture
-TARGET_BUILD_64BIT := false
+TARGET_BUILD_64BIT := true
 ifeq ($(TARGET_BUILD_64BIT), true)
 # Build 64-bit TWRP
 TARGET_ARCH := arm64
@@ -36,7 +36,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 else
 # Build 32-bit TWRP
 TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv8-2a
+TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := generic
