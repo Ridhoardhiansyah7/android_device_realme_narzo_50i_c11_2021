@@ -78,32 +78,6 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock.recovery \
     fastbootd
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/ramdisk/android.hardware.gatekeeper@1.0.so:system/lib64/android.hardware.gatekeeper@1.0.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/android.hardware.keymaster-V2-ndk_platform.so:system/lib64/android.hardware.keymaster-V2-ndk_platform.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/android.hardware.keymaster@4.0.so:system/lib64/android.hardware.keymaster@4.0.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/android.hardware.keymaster@4.1.so:system/lib64/android.hardware.keymaster@4.1.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libbase.so:system/lib64/libbase.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libc++.so:system/lib64/libc++.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libc.so:system/lib64/libc.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libcutils.so:system/lib64/libcutils.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libdl.so:system/lib64/libdl.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libgatekeeper.so:system/lib64/libgatekeeper.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libhardware.so:system/lib64/libhardware.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libhidlbase.so:system/lib64/libhidlbase.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libkey.so:system/lib64/libkey.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libkeymaster4_1support.so:system/lib64/libkeymaster4_1support.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libkeymaster4support.so:system/lib64/libkeymaster4support.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libkeymaster_messages.so:system/lib64/libkeymaster_messages.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libkeymaster_portable.so:system/lib64/libkeymaster_portable.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/liblog.so:system/lib64/liblog.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libm.so:system/lib64/libm.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libsoft_attestation_cert.so:system/lib64/libsoft_attestation_cert.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libsoftkeymasterdevice.so:system/lib64/libsoftkeymasterdevice.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libtrusty.so:system/lib64/libtrusty.so \
-    $(LOCAL_PATH)/prebuilt/ramdisk/libutils.so:system/lib64/libutils.so
-
-
 # Hidl
 PRODUCT_ENFORCE_VINTF_MANIFEST := true 
 
