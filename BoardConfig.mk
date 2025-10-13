@@ -131,6 +131,10 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
 
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libandroidicu 
+    $(OUT_DIR)/target/product/$(PRODUCT_DEVICE)/obj/SHARED_LIBRARIES/libandroidicu_intermediates/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib/libandroidicu.so
+
 # Fix fastboot reboot
 TW_NO_FASTBOOT_BOOT := true
     
