@@ -21,9 +21,13 @@
 /miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="Miscdata (S/N & UnlockFlag)"
 /misc                   emmc     /dev/block/by-name/misc                    flags=backup=1;display="Misc"
 /tos                    emmc     /dev/block/by-name/trustos                 flags=backup=1;display="Trustos";slotselect
+/logo                   emmc     /dev/block/by-name/logo                    flags=backup=1;display="Logo"
+/fbootlogo              emmc     /dev/block/by-name/fbootlogo               flags=backup=1;display="Fbootlogo";flashimg=1 
 /boot                   emmc     /dev/block/by-name/boot                    flags=backup=1;display="Boot";flashimg=1
 /dtb                    emmc     /dev/block/by-name/dtb                     flags=backup=1;display="Dtb"
 /dtbo                   emmc     /dev/block/by-name/dtbo                    flags=backup=1;display="Dtbo";flashimg=1
+/socko                  emmc     /dev/block/by-name/socko                   flags=backup=1;display="Socko";flashimg=1
+/vendor_boot            emmc     /dev/block/by-name/vendor_boot             flags=backup=1;display="vendor_boot";flashimg=1;slotselect
 /ltedsp                 emmc     /dev/block/by-name/l_ldsp                  flags=backup=1;subpartitionof=/ltemodem;slotselect
 /ltegdsp                emmc     /dev/block/by-name/l_gdsp			            flags=backup=1;subpartitionof=/ltemodem;slotselect
 /ltemodem               emmc     /dev/block/by-name/l_modem                 flags=backup=1;display="Modem (IMEI)";slotselect
