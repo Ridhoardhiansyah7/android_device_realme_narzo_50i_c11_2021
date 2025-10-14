@@ -41,6 +41,7 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 #TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
+TW_LOAD_VENDOR_BOOT_MODULES := true
 
 # TWRP Fix Clock,Cpu temp, battery persentase position
 TW_STATUS_ICONS_ALIGN := center
