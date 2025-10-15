@@ -17,9 +17,11 @@
 DEVICE_PATH := device/realme/RMX3235
 
 # Architecture
-TARGET_BUILD_64BIT := true
-ifeq ($(TARGET_BUILD_64BIT), true)
+FORCE_32_BIT := true
+ifeq ($(FORCE_32_BIT), true)
 # Build 64-bit TWRP
+TARGET_BOARD_SUFFIX := _64
+TARGET_IS_64_BIT := true
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -39,8 +41,10 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 TARGET_USES_64_BIT_BINDER := true
 else
 # Build 32-bit TWRP
+TARGET_BOARD_SUFFIX := _32
+TARGET_IS_64_BIT := false
 TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := generic
@@ -56,7 +60,7 @@ endif
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := RMX3235
 TARGET_NO_BOOTLOADER := false
-#TARGET_USES_UEFI := true
+TARGET_USES_UEFI := true
 
 # Platform
 TARGET_BOARD_PLATFORM := sp9863a
@@ -121,10 +125,21 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TARGET_RECOVERY_PIXEL_FORMAT := RGBA_8888
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TARGET_USES_MKE2FS := true
+
+#Modules 
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libcap \
+    libion \
+    libxml2 \
+
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libcap.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
 
 # Fix fastboot reboot
 TW_NO_FASTBOOT_BOOT := true
