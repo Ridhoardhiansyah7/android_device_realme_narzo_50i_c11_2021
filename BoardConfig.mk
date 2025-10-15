@@ -126,10 +126,6 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TARGET_USES_MKE2FS := true
 
-TARGET_RECOVERY_DEVICE_MODULES += \
-    libandroidicu 
-    $(OUT_DIR)/target/product/$(PRODUCT_DEVICE)/obj/SHARED_LIBRARIES/libandroidicu_intermediates/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib/libandroidicu.so
-
 # Fix fastboot reboot
 TW_NO_FASTBOOT_BOOT := true
     
