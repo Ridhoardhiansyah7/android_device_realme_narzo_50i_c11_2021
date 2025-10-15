@@ -24,7 +24,7 @@ ifeq ($(FORCE_32_BIT), true)
 TARGET_BOARD_SUFFIX := _32
 TARGET_IS_64_BIT := false
 TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv8-a
+TARGET_ARCH_VARIANT := armv8-2a
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := generic
