@@ -18,7 +18,7 @@ DEVICE_PATH := device/realme/RMX3235
 
 # Architecture
 
-FORCE_32_BIT := true
+FORCE_32_BIT := false
 ifeq ($(FORCE_32_BIT), true)
 # Build 32-bit TWRP
 TARGET_BOARD_SUFFIX := _32
