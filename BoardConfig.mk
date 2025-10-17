@@ -18,13 +18,13 @@ DEVICE_PATH := device/realme/RMX3235
 
 # Architecture
 
-FORCE_32_BIT := false
+FORCE_32_BIT := true
 ifeq ($(FORCE_32_BIT), true)
 # Build 32-bit TWRP
 TARGET_BOARD_SUFFIX := _32
 TARGET_IS_64_BIT := false
 TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv8-2a
+TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := generic
@@ -127,7 +127,8 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+#TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TW_FORCE_FBDEV_BACKEND := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TARGET_USES_MKE2FS := true
