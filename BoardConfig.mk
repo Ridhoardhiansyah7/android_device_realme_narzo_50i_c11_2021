@@ -18,7 +18,7 @@ DEVICE_PATH := device/realme/RMX3235
 
 # Architecture
 
-FORCE_32_BIT := true
+FORCE_32_BIT := false
 ifeq ($(FORCE_32_BIT), true)
 # Build 32-bit TWRP
 TARGET_BOARD_SUFFIX := _32
@@ -36,16 +36,17 @@ TARGET_USES_64_BIT_BINDER := true
 else
 # Build 64-bit TWRP
 TARGET_BOARD_SUFFIX := _64
-TARGET_IS_64_BIT := true
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 := 
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := cortex-a75
+
+TARGET_IS_64_BIT := true
+TARGET_USES_64_BIT_BINDER := true
 TARGET_SUPPORTS_32_BIT_APPS := true
 TARGET_SUPPORTS_64_BIT_APPS := true
-TW_INCLUDE_32BIT_ADB := true
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
@@ -53,7 +54,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
-TARGET_USES_64_BIT_BINDER := true
 endif
 
 # APEX
@@ -127,8 +127,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
-#TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-TW_FORCE_FBDEV_BACKEND := true
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TARGET_USES_MKE2FS := true
@@ -147,7 +146,7 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
 # Fix fastboot reboot
 TW_NO_FASTBOOT_BOOT := true
     
-## Inherit partitions flags
+# Inherit partitions flags
 include device/realme/RMX3235/partitions.mk
 
 # Recovery flags
