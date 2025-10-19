@@ -16,14 +16,12 @@ Display | 720 x 1600 pixels, 20:9 ratio (269 ppi density)
 Rear Camera  | 8 MP
 Front Camera | 5 MP
 
----
-
-# Device Information
-
 **Specifications in detail:**  
 See [GSMArena - Realme C11 (2021)](https://www.gsmarena.com/realme_c11_(2021)-10890.php)
 
 **Base firmware:** A.29
+
+---
 
 ## Decryption Behavior in TWRP Builds
 
