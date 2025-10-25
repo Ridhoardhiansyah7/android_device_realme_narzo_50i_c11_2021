@@ -8,6 +8,7 @@ AB_OTA_PARTITIONS += \
     vbmeta_system_ext \
     dtbo \
     boot \
+    socko \
     system \
     system_ext \
     vendor \
