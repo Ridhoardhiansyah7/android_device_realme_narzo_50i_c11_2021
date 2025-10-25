@@ -14,33 +14,49 @@
 /product                ext4     /dev/block/mapper/product                  flags=display="Product";slotselect;backup=1;wipeingui
 /vendor                 ext4     /dev/block/mapper/vendor                   flags=display="Vendor";slotselect;backup=1;wipeingui
 
-# Other
+# BOOT process
 /spl                    emmc     /dev/block/mmcblk0boot0                    flags=display=spl;backup=1
 /spl_bk                 emmc     /dev/block/mmcblk0boot1                    flags=display=spl_bk;backup=1     
 /uboot                  emmc     /dev/block/by-name/uboot            		    flags=backup=1;display="UBoot";slotselect
+/uboot_log              emmc     /dev/block/by-name/uboot_log               flags=backup=1;display="UBootLog"
 /miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="miscdata (S/N & UnlockFlag)"
 /misc                   emmc     /dev/block/by-name/misc                    flags=backup=1;display="misc"
-/tos                    emmc     /dev/block/by-name/trustos                 flags=backup=1;display="Trustos";slotselect
-/logo                   emmc     /dev/block/by-name/logo                    flags=backup=1;display="logo"
+/tos                    emmc     /dev/block/by-name/trustos                 flags=backup=1;display="trustos"; flashimg=1;slotselect
+/teecfg                 emmc    /dev/block/by-name/teecfg                       flags=backup=1;display="teecfg";flashimg=1;slotselect
+/sml                    emmc     /dev/block/by-name/sml                     flags=backup=1;display="sml";flashimg=1
+/hypervsior             emmc    /dev/block/by-name/hypervsior              flags=backup=1;display="hypervsior";flashimg=1;slotselect
+/logo                   emmc     /dev/block/by-name/logo                    flags=backup=1;display="logo";flashing=1
 /fbootlogo              emmc     /dev/block/by-name/fbootlogo               flags=backup=1;display="fbootlogo";flashimg=1 
 /boot                   emmc     /dev/block/by-name/boot                    flags=backup=1;display="boot";flashimg=1
 /dtb                    emmc     /dev/block/by-name/dtb                     flags=backup=1;display="dtb"
 /dtbo                   emmc     /dev/block/by-name/dtbo                    flags=backup=1;display="dtbo";flashimg=1;slotselect
 /socko                  ext4     /dev/block/by-name/socko                   flags=backup=1;display="socko";flashimg=1;slotselect
 /vendor_boot            emmc     /dev/block/by-name/vendor_boot             flags=backup=1;display="vendor_boot";flashimg=1;slotselect
+
+# Signal/Modem, IMEI, Calibration
 /ltedsp                 emmc     /dev/block/by-name/l_ldsp                  flags=backup=1;subpartitionof=/ltemodem;slotselect
 /ltegdsp                emmc     /dev/block/by-name/l_gdsp			            flags=backup=1;subpartitionof=/ltemodem;slotselect
 /ltemodem               emmc     /dev/block/by-name/l_modem                 flags=backup=1;display="Modem (IMEI)";slotselect
-/ltedeltanv				      emmc     /dev/block/by-name/l_deltanv               flags=backup=1;subpartitionof=/ltemodem;slotselect
+/ltedeltanv				       emmc     /dev/block/by-name/l_deltanv               flags=backup=1;subpartitionof=/ltemodem;slotselect
 /ltefixnv1              emmc     /dev/block/by-name/l_fixnv1                flags=backup=1;subpartitionof=/ltemodem;slotselect
 /ltefixnv2              emmc     /dev/block/by-name/l_fixnv2                flags=backup=1;subpartitionof=/ltemodem;slotselect
 /lteruntimenv1          emmc     /dev/block/by-name/l_runtimenv1            flags=backup=1;subpartitionof=/ltemodem;slotselect
 /lteruntimenv2          emmc     /dev/block/by-name/l_runtimenv2            flags=backup=1;subpartitionof=/ltemodem;slotselect
 /wcnmodem               emmc     /dev/block/by-name/wcnmodem                flags=backup=1;slotselect
-/gnssmodem        		  emmc     /dev/block/by-name/gpsgl			              flags=backup=1;slotselect
+/gnssmodem        		    emmc     /dev/block/by-name/gpsgl			              flags=backup=1;slotselect
 /gnssbdmodem            emmc     /dev/block/by-name/gpsbd                   flags=backup=1;slotselect
 /prodnv            	    ext4     /dev/block/by-name/prodnv                  flags=backup=1;flashimg=1;display="ProdNV" 	
 
+# Others
+/ocdt                   emmc     /dev/block/by-name/ocdt                          flags=backup=1;display="ocdt";flashimg=1;slotselect
+/common_rs1             emmc     /dev/block/by-name/common_rs1          flags=backup=1;display="common_rs1";flashimg=1;slotselect
+/pm_sys                 emmc     /dev/block/by-name/pm_sys                    flags=backup=1;display="pm_sys";flashimg=1;slotselect
+/my_preload             ext4     /dev/block/by-name/my_preload           flags=backup=1;display="preload_apps";flashimg=1;slotselect
+/sysdumpdb              emmc     /dev/block/by-name/sysdumpdb           flags=backup=1;display="sysdumpdb"
+/persist                emmc     /dev/block/by-name/persist                     flags=backup=1;display="persist"
+
+
+# Internal, Cache, Metadata
 /metadata               ext4     /dev/block/by-name/metadata              	flags=backup=1;display="metadata"
 /cache                  ext4     /dev/block/by-name/cache                   flags=backup=1;display="Cache";wipeingui
 /data                   auto     /dev/block/by-name/userdata                flags=display="data"
