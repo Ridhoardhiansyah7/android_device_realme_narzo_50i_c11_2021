@@ -19,13 +19,13 @@
 /spl_bk                 emmc     /dev/block/mmcblk0boot1                    flags=display=spl_bk;backup=1     
 /uboot                  emmc     /dev/block/by-name/uboot            		    flags=backup=1;display="UBoot";slotselect
 /uboot_log              emmc     /dev/block/by-name/uboot_log               flags=backup=1;display="UBootLog"
-/miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="miscdata (S/N & UnlockFlag)"
+/miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="miscdata(S/N&UnlockFlag)"
 /misc                   emmc     /dev/block/by-name/misc                    flags=backup=1;display="misc"
 /tos                    emmc     /dev/block/by-name/trustos                 flags=backup=1;display="trustos"; flashimg=1;slotselect
 /teecfg                 emmc    /dev/block/by-name/teecfg                       flags=backup=1;display="teecfg";flashimg=1;slotselect
 /sml                    emmc     /dev/block/by-name/sml                     flags=backup=1;display="sml";flashimg=1
 /hypervsior             emmc    /dev/block/by-name/hypervsior              flags=backup=1;display="hypervsior";flashimg=1;slotselect
-/logo                   emmc     /dev/block/by-name/logo                    flags=backup=1;display="logo";flashing=1
+/logo                   emmc     /dev/block/by-name/logo                    flags=backup=1;display="logo";flashimg=1
 /fbootlogo              emmc     /dev/block/by-name/fbootlogo               flags=backup=1;display="fbootlogo";flashimg=1 
 /boot                   emmc     /dev/block/by-name/boot                    flags=backup=1;display="boot";flashimg=1
 /dtb                    emmc     /dev/block/by-name/dtb                     flags=backup=1;display="dtb"
