@@ -20,7 +20,7 @@
 /spl_bk                 emmc     /dev/block/mmcblk0boot1                    flags=display=spl_bk;backup=1     
 /pm_sys                 emmc     /dev/block/by-name/pm_sys                    flags=backup=1;display="pm_sys";flashimg=1;slotselect
 /uboot                  emmc     /dev/block/by-name/uboot            		    flags=backup=1;display="UBoot";slotselect
-/uboot_log              emmc     /dev/block/by-name/uboot_log               flags=backup=1;display="UBootLog"
+/uboot_log              emmc     /dev/block/by-name/uboot_log               flags=backup=1;display="UBootLog";wipeingui
 /miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="miscdata(S/N&UnlockFlag)"
 /misc                   emmc     /dev/block/by-name/misc                    flags=backup=1;display="misc"
 /persist                emmc     /dev/block/by-name/persist                     flags=backup=1;flashimg=1;display="persist"
@@ -61,13 +61,13 @@ avbmeta_rs              emmc     /dev/block/by-name/avbmeta_rs          flags=ba
 
 
 # Preload app (Bloatware app)
-/my_preload             ext4     /dev/block/by-name/my_preload           flags=backup=1;display="preload_apps";flashimg=1;slotselect
+/my_preload             ext4     /dev/block/by-name/my_preload           flags=backup=1;display="preload_apps";flashimg=1;wipeingui;slotselect
 
 
 # Internal, Cache, Metadata
-/metadata               ext4     /dev/block/by-name/metadata              	flags=backup=1;display="metadata"
+/metadata               ext4     /dev/block/by-name/metadata              	flags=backup=1;display="metadata";wipeingui
 /cache                  ext4     /dev/block/by-name/cache                   flags=backup=1;display="Cache";wipeingui
-/data                   f2fs     /dev/block/by-name/userdata                flags=display="data"
+/data                   f2fs     /dev/block/by-name/userdata                flags=display="data";wipeingui
 
 
 # Removable storage
