@@ -24,7 +24,7 @@
 /miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="miscdata(S/N&UnlockFlag)"
 /misc                   emmc     /dev/block/by-name/misc                    flags=backup=1;display="misc"
 /persist                emmc     /dev/block/by-name/persist                     flags=backup=1;flashimg=1;display="persist"
-/tos                    emmc     /dev/block/by-name/trustos                 flags=backup=1;display="trustos"; flashimg=1;slotselect
+/tos                    emmc     /dev/block/by-name/trustos                 flags=backup=1;display="trustos";flashimg=1;slotselect
 /teecfg                 emmc    /dev/block/by-name/teecfg                       flags=backup=1;display="teecfg";flashimg=1;slotselect
 /sml                    emmc     /dev/block/by-name/sml                     flags=backup=1;display="sml";flashimg=1
 /hypervsior             emmc    /dev/block/by-name/hypervsior              flags=backup=1;display="hypervsior";flashimg=1;slotselect
@@ -57,7 +57,6 @@
 
 # Others
 /common_rs1             emmc     /dev/block/by-name/common_rs1          flags=backup=1;display="common_rs1";flashimg=1;slotselect
-avbmeta_rs              emmc     /dev/block/by-name/avbmeta_rs          flags=backup=1;display="avbmeta_rs";flashimg=1;slotselect
 
 
 # Preload app (Bloatware app)
