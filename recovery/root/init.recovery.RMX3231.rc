@@ -2,7 +2,6 @@
 import /init.recovery.common.rc
 
 on init
-    #export LD_LIBRARY_PATH /system/lib:/vendor/lib
     mount_all /system/etc/recovery.tmpfsdata.fstab
     setprop sys.usb.config adb
     mkdir /dev/cpuset/system-background
@@ -16,6 +15,9 @@ on init
     mount tracefs tracefs /sys/kernel/tracing
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
+
+on early-fs
+    start vold
 
 on fs
     start prepdecrypt
@@ -43,7 +45,14 @@ service prepdecrypt /system/bin/prepdecrypt.sh
     oneshot
     seclabel u:r:recovery:s0
 
-service keystore /system/bin/keystore /data/misc/keystore
+service keystore_auth /system/bin/keystore_auth
+    oneshot
+    user system
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service keystore /system/bin/keystore /tmp/misc/keystore
     user root
     group root drmrpc readproc log
     disabled
@@ -60,6 +69,10 @@ service gatekeeper-1-0 /system/bin/linker /vendor/bin/hw/android.hardware.gateke
     group root
     disabled
     seclabel u:r:recovery:s0
+
+on property:vendor.sys.listener.registered=true
+    start keymaster-4-1
+    start gatekeeper-1-0
 
 on property:crypto.ready=1 && property:ro.crypto.state=encrypted
     start keymaster-4-1
