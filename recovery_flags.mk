@@ -43,6 +43,9 @@ TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 #TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 TW_LOAD_VENDOR_BOOT_MODULES := true
 
+# Fix fastboot reboot
+TW_NO_FASTBOOT_BOOT := true
+
 # TWRP Fix Clock,Cpu temp, battery persentase position
 TW_STATUS_ICONS_ALIGN := center
 TW_CUSTOM_CPU_POS := 50
