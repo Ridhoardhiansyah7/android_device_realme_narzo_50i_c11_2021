@@ -16,11 +16,7 @@ on init
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
 
-on early-fs
-    start vold
-
 on fs
-    start prepdecrypt
     insmod /socko/adaptive-ts.ko
     insmod /socko/mali_kbase.ko
     copy /dev/block/by-name/sysdump /dev/urandom
@@ -38,57 +34,6 @@ service logd /system/bin/logd
     seclabel u:r:recovery:s0
     writepid /dev/cpuset/system-background/tasks
 
-service prepdecrypt /system/bin/prepdecrypt.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
-
-service keystore_auth /system/bin/keystore_auth
-    oneshot
-    user system
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-service keystore /system/bin/keystore /tmp/misc/keystore
-    user root
-    group root drmrpc readproc log
-    disabled
-    seclabel u:r:recovery:s0
-
-service keymaster-4-1 /system/bin/linker /vendor/bin/hw/android.hardware.keymaster@4.1-unisoc.service
-    user root
-    group root drmrpc
-    disabled
-    seclabel u:r:recovery:s0
-
-service gatekeeper-1-0 /system/bin/linker /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-on property:vendor.sys.listener.registered=true
-    start keymaster-4-1
-    start gatekeeper-1-0
-
-on property:crypto.ready=1 && property:ro.crypto.state=encrypted
-    start keymaster-4-1
-    start gatekeeper-1-0
-
-on property:crypto.ready=1 && property:hwservicemanager.ready=true
-    start keymaster-4-1
-    start gatekeeper-1-0
-
-on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted || property:twrp.decrypt.done=true
-    stop keymaster-4-1
-    stop gatekeeper-1-0
-
 on boot
-    install_keyring
-    start keymaster-4-1
-    start gatekeeper-1-0
     start boot-hal-1-1
     start health-hal-2-1
