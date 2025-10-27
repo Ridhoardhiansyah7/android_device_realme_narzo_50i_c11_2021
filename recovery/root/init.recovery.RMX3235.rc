@@ -38,6 +38,14 @@ service logd /system/bin/logd
     seclabel u:r:recovery:s0
     writepid /dev/cpuset/system-background/tasks
 
+service vold /system/bin/vold
+    class core
+    oneshot
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
 service prepdecrypt /system/bin/prepdecrypt.sh
     user root
     group root
@@ -59,6 +67,7 @@ service keystore /system/bin/keystore /tmp/misc/keystore
     seclabel u:r:recovery:s0
 
 service keymaster-4-1 /system/bin/hw/android.hardware.keymaster@4.1-unisoc.service
+    class early_hal
     user root
     group root drmrpc
     disabled
