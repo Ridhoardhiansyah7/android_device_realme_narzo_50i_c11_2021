@@ -43,6 +43,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_vendor=ext4 \
     POSTINSTALL_OPTIONAL_vendor=true    
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
