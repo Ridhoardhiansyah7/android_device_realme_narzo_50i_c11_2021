@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2024 The TWRP Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -125,7 +124,6 @@ PLATFORM_VERSION := 11.0.0
 # Decryption
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_USE_FSCRYPT_POLICY := 2
 
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -137,7 +135,7 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TARGET_USES_MKE2FS := true
 
-#Modules 
+# Modules 
 TARGET_RECOVERY_DEVICE_MODULES += \
     libcap \
     libion \
