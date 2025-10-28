@@ -21,24 +21,7 @@ See [GSMArena - Realme C11 (2021)](https://www.gsmarena.com/realme_c11_(2021)-10
 
 **Base on firmware:** A.29
 
----
-
-## Decryption Behavior in TWRP Builds
-
-Decryption works correctly when the **TWRP ramdisk** is built for the **ARM (32-bit)** architecture.  
-However, if TWRP is built for the **ARM (32-bit)**, the following error occurs during startup:
-
-```bash
-Starting the UI...
-setting DRM_FORMAT_RGBX8888 and GGL_PIXEL_FORMAT_RGBX_8888
-setting DRM_FORMAT_XBGR8888 and GGL_PIXEL_FORMAT_RGBA_8888
-mmap() failed: Invalid argument
-setting DRM_FORMAT_XBGR8888 and GGL_PIXEL_FORMAT_RGBA_8888
-mmap() failed: Invalid argument
-```
-
-Already tried using other pixel formats, but the same error still occurs.
-
+**Currently, decryption is not working; I don’t know why, even though the gatekeeper and keymaster services are already running.**
 
 ---
 
