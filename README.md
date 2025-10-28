@@ -23,10 +23,10 @@ See [GSMArena - Realme C11 (2021)](https://www.gsmarena.com/realme_c11_(2021)-10
 
 ---
 
-## Decryption Behavior in TWRP Builds
+## TWRP Builds
 
-Decryption works correctly when the **TWRP ramdisk** is built for the **ARM (32-bit)** architecture.  
-However, if TWRP is built for the **ARM (32-bit)**, the following error occurs during startup:
+
+TWRP must be built in 64-bit(arm64); if TWRP is built in 32-bit(arm), this error will occur during startup:
 
 ```bash
 Starting the UI...
