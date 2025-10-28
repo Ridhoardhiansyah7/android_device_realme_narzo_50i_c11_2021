@@ -12,31 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Commons path
 DEVICE_PATH := device/realme/RMX3235
 
-# SHRP path
-SHRP_DEVICE_CODE := RMX3235
-SHRP_PATH := device/realme/$(SHRP_DEVICE_CODE)
-
 # Architecture
-FORCE_32_BIT := false
-ifeq ($(FORCE_32_BIT), true)
-# Build 32-bit TWRP
-TARGET_BOARD_SUFFIX := _32
-TARGET_IS_64_BIT := false
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := generic
-TARGET_CPU_VARIANT_RUNTIME := cortex-a55
-TARGET_SUPPORTS_32_BIT_APPS := true
-TARGET_SUPPORTS_64_BIT_APPS := false
-TARGET_USES_64_BIT_BINDER := true
-
-else
-# Build 64-bit TWRP
 TARGET_BOARD_SUFFIX := _64
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -56,7 +34,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
-endif
 
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
