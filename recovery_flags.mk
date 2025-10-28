@@ -65,39 +65,8 @@ FOX_BUILD_DEVICE := RMX323X
 OF_DEFAULT_LANG := id
 OF_VIBRATOR_PATH := 
 
-# SHRP Configuration 
-#A/B,SAR
-SHRP_AB := true
-SHRP_DEVICE_TYPE := A/B
-SHRP_REC_TYPE := SAR
-#Recovery partition path, this device using recovery in boot partition!.
-#SHRP_REC := 
-#SHRP_HAS_RECOVERY_PARTITION := false
-#Reboot with autodloader command will brick your device,use volume button.
-SHRP_EDL_MODE := 0
-# internal user data, external user data, and otg path
-SHRP_INTERNAL := /sdcard
-SHRP_EXTERNAL := /external_sd
-SHRP_OTG := /usb_otg
-#Flashlight
-SHRP_FLASH := 0
-#SHRP_CUSTOM_FLASHLIGHT := true
-#SHRP_FONP_1 :=
-#SHRP_FONP_2 :=
-#SHRP_FONP_3 :=
-#Custom themming, device notch, and persistent path
-SHRP_EXPRESS := true
-# use /system to persistent SHRP user configuration
-#SHRP_EXPRESS_USE_DATA := false
-SHRP_NOTCH := true
-SHRP_DARK := true
-#Legacy(backward), lite mode(not include SHRP themming but will save space for devices with a smaller recovery partition)
-#SHRP_NO_SAR_AUTOMOUNT := false
-#SHRP_LITE := false
-
 # Maintainer
 BOARD_MAINTAINER_NAME := RMX323x by Aflahal
 TW_DEVICE_VERSION := $(BOARD_MAINTAINER_NAME)
 PB_MAIN_VERSION := $(BOARD_MAINTAINER_NAME)
 OF_MAINTAINER := $(BOARD_MAINTAINER_NAME)
-#SHRP_MAINTAINER := $(BOARD_MAINTAINER_NAME)
