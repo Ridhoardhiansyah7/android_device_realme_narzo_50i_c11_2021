@@ -17,7 +17,7 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
 # Kernel module
-#TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.ko trace_noschedule_bytedancy.ko trace_runqlat_bytedancy.ko"
+TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.ko trace_noschedule_bytedancy.ko trace_runqlat_bytedancy.ko"
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
@@ -42,6 +42,7 @@ TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 #TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 TW_LOAD_VENDOR_BOOT_MODULES := true
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # Fix fastboot reboot
 TW_NO_FASTBOOT_BOOT := true
