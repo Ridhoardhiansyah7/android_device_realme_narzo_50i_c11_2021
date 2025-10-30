@@ -16,6 +16,10 @@ on init
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
 
+# fix otg/USB input
+on post-init
+    exec u:r:sh:s0 -- /system/bin/sh -c "echo 1 > /sys/class/power_supply/usb/otg_switch"
+
 on early-fs
     start vold
 
