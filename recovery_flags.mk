@@ -15,6 +15,7 @@ TW_INCLUDE_LIBRESETPROP := true
 # Debugging
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+TWRP_EVENT_LOGGING := true
 TW_CRYPTO_SYSTEM_VOLD_DEBUG := true
 
 # Kernel module
