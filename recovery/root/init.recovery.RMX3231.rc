@@ -96,10 +96,8 @@ on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted 
 
 on post-fs-data
     installkey /data
-    install_keyring
 
 on boot
-    installkey /data
     install_keyring
     start keymaster-4-1
     start gatekeeper-1-0
