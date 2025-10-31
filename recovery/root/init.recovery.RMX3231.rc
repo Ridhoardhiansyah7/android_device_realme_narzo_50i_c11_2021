@@ -94,6 +94,10 @@ on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted 
     stop keymaster-4-1
     stop gatekeeper-1-0
 
+on post-fs-data
+    installkey /data
+    install_keyring
+
 on boot
     installkey /data
     install_keyring
