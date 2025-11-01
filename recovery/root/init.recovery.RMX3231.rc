@@ -92,7 +92,7 @@ on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted 
     stop gatekeeper-1-0
 
 on post-fs-data
-    # ensure Make we have the device encryption key.
+    # ensure we have the device encryption key.
     installkey /data
     # fix otg/USB input
     write /sys/class/power_supply/usb/otg_switch 1
