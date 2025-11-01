@@ -17,10 +17,6 @@ on init
     setprop persist.sys.usb.config mtp,adb
 
 
-on post-fs-data
-    write /sys/class/power_supply/usb/otg_switch 1
-
-
 on early-fs
     start vold
 
@@ -102,8 +98,6 @@ on post-fs-data
     write /sys/class/power_supply/usb/otg_switch 1
     # fix/add support /data lun
     # write /sys/class/android_usb/android0/f_mass_storage/board_support_luns 1
-
-
 
 on boot
     install_keyring
