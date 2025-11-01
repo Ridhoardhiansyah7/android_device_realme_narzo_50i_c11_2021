@@ -16,6 +16,7 @@ on init
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
 
+
 on early-fs
     start vold
 
@@ -24,6 +25,16 @@ on fs
     insmod /socko/adaptive-ts.ko
     insmod /socko/mali_kbase.ko
     copy /dev/block/by-name/sysdump /dev/urandom
+
+service vold /system/bin/vold \
+    --blkid_context=u:r:recovery:s0 \
+    --blkid_untrusted_context=u:r:recovery:s0 \
+    --fsck_context=u:r:recovery:s0 \
+    --fsck_untrusted_context=u:r:recovery:s0
+    class core
+    oneshot
+    user root
+    group root
 
 service logd /system/bin/logd
     socket logd stream 0666 logd logd
@@ -38,14 +49,6 @@ service logd /system/bin/logd
     seclabel u:r:recovery:s0
     writepid /dev/cpuset/system-background/tasks
 
-service vold /system/bin/vold
-    class core
-    oneshot
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
 service prepdecrypt /system/bin/prepdecrypt.sh
     user root
     group root
@@ -53,14 +56,7 @@ service prepdecrypt /system/bin/prepdecrypt.sh
     oneshot
     seclabel u:r:recovery:s0
 
-service keystore_auth /system/bin/keystore_auth
-    oneshot
-    user system
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-service keystore /system/bin/keystore /tmp/misc/keystore
+service keystore /system/bin/keystore /data/misc/keystore
     user root
     group root drmrpc readproc log
     disabled
@@ -94,6 +90,14 @@ on property:crypto.ready=1 && property:hwservicemanager.ready=true
 on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted || property:twrp.decrypt.done=true
     stop keymaster-4-1
     stop gatekeeper-1-0
+
+on post-fs-data
+    # ensure we have the device encryption key.
+    installkey /data
+    # fix otg/USB input
+    write /sys/class/power_supply/usb/otg_switch 1
+    # fix/add support /data lun
+    # write /sys/class/android_usb/android0/f_mass_storage/board_support_luns 1
 
 on boot
     install_keyring
