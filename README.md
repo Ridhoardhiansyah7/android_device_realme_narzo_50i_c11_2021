@@ -21,7 +21,7 @@ See [GSMArena - Realme C11 (2021)](https://www.gsmarena.com/realme_c11_(2021)-10
 
 **Base on firmware:** A.29
 
-**Currently, decryption is not working; I don’t know why, even though the gatekeeper and keymaster services are already running.**
+**Currently, decryption works perfectly if your ROM is not locked with a password, pattern, or anything similar. However, if your ROM is locked, TWRP cannot verify whether the password you entered is correct or not, although it can still detect the type of lock used (PIN or password). If you keep a password set on your ROM, the /data partition can be accessed properly, but /data/media/0 remains inaccessible (readable but still encrypted). This issue is likely related to a problem with the gatekeeper.**
 
 ---
 
