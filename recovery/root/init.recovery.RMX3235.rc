@@ -17,24 +17,11 @@ on init
     setprop persist.sys.usb.config mtp,adb
 
 
-on early-fs
-   # start vold
-
 on fs
     start prepdecrypt
-    insmod /socko/adaptive-ts.ko
-    insmod /socko/mali_kbase.ko
+   # insmod /socko/adaptive-ts.ko
+   # insmod /socko/mali_kbase.ko
     copy /dev/block/by-name/sysdump /dev/urandom
-
-service vold /system/bin/vold \
-    --blkid_context=u:r:recovery:s0 \
-    --blkid_untrusted_context=u:r:recovery:s0 \
-    --fsck_context=u:r:recovery:s0 \
-    --fsck_untrusted_context=u:r:recovery:s0
-    class core
-    oneshot
-    user root
-    group root
 
 service logd /system/bin/logd
     socket logd stream 0666 logd logd
