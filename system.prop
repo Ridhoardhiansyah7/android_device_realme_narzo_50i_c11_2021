@@ -1,10 +1,10 @@
 sys.usb.controller=musb-hdrc.0.auto
 
 # Crypto
-ro.crypto.type=file
-ro.crypto.dm_default_key.options_format.version=2
-ro.crypto.metadata.enabled=true
-ro.crypto.uses_fs_ioc_add_encryption_key=true
+#ro.crypto.type=file
+#ro.crypto.dm_default_key.options_format.version=2
+#ro.crypto.metadata.enabled=true
+#ro.crypto.uses_fs_ioc_add_encryption_key=true
 
 
 # Keymaster
