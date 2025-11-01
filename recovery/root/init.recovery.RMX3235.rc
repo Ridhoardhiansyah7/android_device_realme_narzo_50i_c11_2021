@@ -19,9 +19,6 @@ on init
 
 on fs
     start prepdecrypt
-   # insmod /socko/adaptive-ts.ko
-   # insmod /socko/mali_kbase.ko
-    copy /dev/block/by-name/sysdump /dev/urandom
 
 service logd /system/bin/logd
     socket logd stream 0666 logd logd
@@ -45,7 +42,7 @@ service prepdecrypt /system/bin/prepdecrypt.sh
 
 service keystore /system/bin/keystore /data/misc/keystore
     user root
-    group root drmrpc readproc log
+    group root
     disabled
     seclabel u:r:recovery:s0
 
@@ -92,3 +89,4 @@ on boot
     start gatekeeper-1-0
     start boot-hal-1-1
     start health-hal-2-1
+    
