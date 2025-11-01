@@ -49,6 +49,8 @@ TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 
 # Fix fastboot reboot
 TW_NO_FASTBOOT_BOOT := true
+# LUN file path
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 
 # TWRP Fix Clock,Cpu temp, battery persentase position
 TW_STATUS_ICONS_ALIGN := center
