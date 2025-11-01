@@ -43,7 +43,7 @@ Medium checks
 - [X] all important partitions listed in mount/backup lists
 - [X] backup/restore to/from external (USB-OTG) storage
 - [X] backup/restore to/from adb
-- [ ] decrypt /data
+- [X] decrypt /data (Bug: Decryption works fine if the ROM is not locked with a pattern, PIN, or any other method)
 - [X] Correct date
 
 Minor checks
