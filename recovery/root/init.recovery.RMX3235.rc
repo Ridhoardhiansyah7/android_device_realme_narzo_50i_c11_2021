@@ -14,7 +14,7 @@ on init
     chmod 0755 /dev/binderfs
     mount tracefs tracefs /sys/kernel/tracing
     symlink /vendor/firmware /system/etc/firmware
-    setprop persist.sys.usb.config mtp,adb
+    setprop persist.sys.usb.config adb
 
 
 on fs
@@ -82,6 +82,8 @@ on post-fs-data
     write /sys/class/power_supply/usb/otg_switch 1
     # fix/add support /data lun
     write /sys/class/android_usb/android0/f_mass_storage/board_support_luns 1
+    # start mtp if /data is mounted
+    setprop persist.sys.usb.config mtp,adb
 
 on boot
     install_keyring
@@ -89,4 +91,3 @@ on boot
     start gatekeeper-1-0
     start boot-hal-1-1
     start health-hal-2-1
-    
