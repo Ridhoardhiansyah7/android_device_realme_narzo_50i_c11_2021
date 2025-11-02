@@ -46,6 +46,12 @@ service keystore /system/bin/keystore /data/misc/keystore
     seclabel u:r:recovery:s0
     writepid /dev/cpuset/foreground/tasks
 
+service keystore_auth /system/bin/keystore_auth
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
 service keymaster-4-1 /system/bin/hw/android.hardware.keymaster@4.1-unisoc.service
     class early_hal
     user root
