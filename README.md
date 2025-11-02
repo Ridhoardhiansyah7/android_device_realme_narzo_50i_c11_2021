@@ -54,8 +54,8 @@ Minor checks
 - [X] battery level
 - [X] temperature
 - [ ] encrypted backups
-- [X] input devices via USB (USB-OTG) - keyboard, mouse and disks
-- [ ] USB mass storage export (Not Supported)
+- [X] input devices via USB-OTG - keyboard, mouse and disks
+- [X] USB mass storage export (Bug: sometimes unstable)
 - [X] set brightness
 - [ ] vibrate
 - [ ] Flashlight
