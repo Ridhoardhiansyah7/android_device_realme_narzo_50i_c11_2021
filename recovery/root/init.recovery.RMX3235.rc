@@ -15,7 +15,6 @@ on init
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
 
-
 on fs
     start prepdecrypt
 
@@ -82,12 +81,8 @@ on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted 
     stop gatekeeper-1-0
 
 on post-fs-data
-    # ensure we have the device encryption key.
-    installkey /data
     # fix otg/USB input
     write /sys/class/power_supply/usb/otg_switch 1
-    # fix/add support lun
-    # write /sys/class/android_usb/android0/f_mass_storage/board_support_luns 1
 
 on boot
     install_keyring
@@ -95,3 +90,4 @@ on boot
     start gatekeeper-1-0
     start boot-hal-1-1
     start health-hal-2-1
+    
