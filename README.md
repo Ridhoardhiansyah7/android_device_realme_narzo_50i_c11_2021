@@ -51,7 +51,7 @@ Minor checks
 - [X] poweroff
 - [X] battery level
 - [X] temperature
-- [ ] encrypted backups
+- [X] encrypted backups
 - [X] input devices via USB-OTG - keyboard, mouse and disks
 - [X] USB mass storage export (Bug: unstable)
 - [X] set brightness
