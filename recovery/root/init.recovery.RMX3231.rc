@@ -83,9 +83,9 @@ on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted 
 
 on post-fs-data
     # ensure we have the device encryption key.
-    installkey /data
+    # installkey /data
     # fix otg/USB input
-    write /sys/class/power_supply/usb/otg_switch 1
+    # write /sys/class/power_supply/usb/otg_switch 1
     # fix/add support lun
     # write /sys/class/android_usb/android0/f_mass_storage/board_support_luns 1
 
