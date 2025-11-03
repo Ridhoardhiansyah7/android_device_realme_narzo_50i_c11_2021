@@ -21,8 +21,6 @@ See [GSMArena - Realme C11 (2021)](https://www.gsmarena.com/realme_c11_(2021)-10
 
 **Base on firmware:** A.29
 
-**Currently, decryption works perfectly if your ROM is not locked with a password, pattern, or anything similar. However, if your ROM is locked, TWRP cannot verify whether the password you entered is correct or not, although it can still detect the type of lock used (PIN or password). If you keep a password set on your ROM, the /data partition can be accessed properly, but /data/media/0 remains inaccessible (readable but still encrypted). This issue is likely related to a problem with the gatekeeper.**
-
 ---
 
 ## Features
@@ -43,7 +41,7 @@ Medium checks
 - [X] all important partitions listed in mount/backup lists
 - [X] backup/restore to/from external (USB-OTG) storage
 - [X] backup/restore to/from adb
-- [X] decrypt /data (Bug: Decryption works fine if the ROM is not locked with a pattern, PIN, or any other method)
+- [X] decrypt /data (Work fine)
 - [X] Correct date
 
 Minor checks
@@ -55,7 +53,7 @@ Minor checks
 - [X] temperature
 - [ ] encrypted backups
 - [X] input devices via USB-OTG - keyboard, mouse and disks
-- [X] USB mass storage export (Bug: sometimes unstable)
+- [X] USB mass storage export (Bug: unstable)
 - [X] set brightness
 - [ ] vibrate
 - [ ] Flashlight
