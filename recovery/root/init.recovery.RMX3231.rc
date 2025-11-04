@@ -23,8 +23,6 @@ on post-fs-data
 
 on boot
     install_keyring
-    start keymaster-4-1
-    start gatekeeper-1-0
     start boot-hal-1-1
     start health-hal-2-1
 
