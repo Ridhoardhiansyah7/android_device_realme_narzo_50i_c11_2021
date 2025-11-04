@@ -18,6 +18,14 @@ on init
 on fs
     start prepdecrypt
 
+on post-fs-data
+    write /sys/class/power_supply/usb/otg_switch 1
+
+on boot
+    install_keyring
+    start boot-hal-1-1
+    start health-hal-2-1
+
 service logd /system/bin/logd
     socket logd stream 0666 logd logd
     socket logdr seqpacket 0666 logd logd
@@ -79,15 +87,3 @@ on property:crypto.ready=1 && property:hwservicemanager.ready=true
 on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted || property:twrp.decrypt.done=true
     stop keymaster-4-1
     stop gatekeeper-1-0
-
-on post-fs-data
-    # fix otg/USB input
-    write /sys/class/power_supply/usb/otg_switch 1
-
-on boot
-    install_keyring
-    start keymaster-4-1
-    start gatekeeper-1-0
-    start boot-hal-1-1
-    start health-hal-2-1
-    
