@@ -19,10 +19,10 @@ on fs
     start prepdecrypt
 
 on post-fs-data
-    install_keyring
     write /sys/class/power_supply/usb/otg_switch 1
 
 on boot
+    install_keyring
     start boot-hal-1-1
     start health-hal-2-1
 
