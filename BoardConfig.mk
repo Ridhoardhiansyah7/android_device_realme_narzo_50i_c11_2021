@@ -16,10 +16,6 @@
 # Commons path
 DEVICE_PATH := device/realme/RMX3235
 
-# SHRP path
-SHRP_DEVICE_CODE := RMX3235
-SHRP_PATH := device/realme/$(SHRP_DEVICE_CODE)
-
 # Architecture
 FORCE_32_BIT := false
 ifeq ($(FORCE_32_BIT), true)
