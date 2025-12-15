@@ -18,9 +18,6 @@ TARGET_USES_LOGD := true
 #TWRP_EVENT_LOGGING := true
 TW_CRYPTO_SYSTEM_VOLD_DEBUG := true
 
-# Kernel module
-#TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.ko trace_noschedule_bytedancy.ko trace_runqlat_bytedancy.ko"
-
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
@@ -45,13 +42,9 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 #TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
-#TW_LOAD_VENDOR_BOOT_MODULES := true
-#TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # Fix fastboot reboot
 TW_NO_FASTBOOT_BOOT := true
-# LUN file path
-#TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 
 # TWRP Fix Clock,Cpu temp, battery persentase position
 TW_STATUS_ICONS_ALIGN := center
@@ -72,13 +65,9 @@ FOX_VIRTUAL_AB_DEVICE := true
 #OF_FIX_DECRYPTION_ON_DATA_MEDIA := true
 #FOX_USE_DATA_RECOVERY_FOR_SETTINGS := true
 FOX_BUILD_DEVICE := RMX323X
-FOX_VERSION := A11.0
 OF_DEFAULT_LANG := id
 OF_FLASHLIGHT_ENABLE := false
-#OF_FL_PATH1 :=
-#OF_FL_PATH2 :=
 OF_VIBRATOR_ENABLE := false
-#OF_VIBRATOR_PATH := 
 OF_HIDE_NOTCH := true
 OF_KEEP_DM_VERITY := true
 OF_CLOCK_POS := 1
@@ -86,9 +75,22 @@ OF_STATUS_INDENT_LEFT := 50
 OF_STATUS_INDENT_RIGHT := 50
 OF_NO_REFLASH_CURRENT_ORANGEFOX := true
 
+# SHRP Reborn Configuration
+SHRP_DEVICE_CODE := RMX3235
+SHRP_PATH := device/realme/$(SHRP_DEVICE_CODE)
+SHRP_REC_TYPE := SAR
+SHRP_DEVICE_TYPE := A/B
+SHRP_AB := true
+SHRP_INTERNAL := /sdcard
+SHRP_EXTERNAL := /external_sd
+SHRP_OTG := /usb_otg
+SHRP_EXPRESS := true
+SHRP_DARK := false
+
 
 # Maintainer
 BOARD_MAINTAINER_NAME := RMX323x-Aflahal
 TW_DEVICE_VERSION := $(BOARD_MAINTAINER_NAME)
 PB_MAIN_VERSION := $(BOARD_MAINTAINER_NAME)
 OF_MAINTAINER := $(BOARD_MAINTAINER_NAME)
+SHRP_MAINTAINER := $(BOARD_MAINTAINER_NAME)
