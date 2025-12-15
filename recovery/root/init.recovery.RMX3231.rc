@@ -13,9 +13,56 @@ on init
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
     
+on fs
+    start prepdecrypt
+
 on post-fs-data
     write /sys/class/power_supply/usb/otg_switch 1
 
 on boot
+    install_keyring
     start boot-hal-1-1
     start health-hal-2-1
+
+service prepdecrypt /system/bin/prepdecrypt.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service keystore2 /system/bin/keystore2 /tmp/misc/keystore
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+    writepid /dev/cpuset/foreground/tasks
+
+service keymaster-4-1 /system/bin/hw/android.hardware.keymaster@4.1-unisoc.service
+    class early_hal
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0  /system/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+on property:vendor.sys.listener.registered=true
+    start keymaster-4-1
+    start gatekeeper-1-0
+
+on property:crypto.ready=1 && property:ro.crypto.state=encrypted
+    start keymaster-4-1
+    start gatekeeper-1-0
+
+on property:crypto.ready=1 && property:hwservicemanager.ready=true
+    start keymaster-4-1
+    start gatekeeper-1-0
+
+on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted || property:twrp.decrypt.done=true
+    stop keymaster-4-1
+    stop gatekeeper-1-0
