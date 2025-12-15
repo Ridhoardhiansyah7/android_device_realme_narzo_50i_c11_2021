@@ -17,7 +17,8 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_RMX3235.mk \
     $(LOCAL_DIR)/pbrp_RMX3235.mk \
-    $(LOCAL_DIR)/ofox_RMX3235.mk
+    $(LOCAL_DIR)/ofox_RMX3235.mk \
+    $(LOCAL_DIR)/shrp_RMX3235.mk
 
 COMMON_LUNCH_CHOICES := \
     twrp_RMX3235-user \
@@ -28,4 +29,7 @@ COMMON_LUNCH_CHOICES := \
     pbrp_RMX3235-eng \
     ofox_RMX3235-user \
     ofox_RMX3235-userdebug \
-    ofox_RMX3235-eng
+    ofox_RMX3235-eng \
+    shrp_RMX3235-user \
+    shrp_RMX3235-userdebug \
+    shrp_RMX3235-eng \
