@@ -32,4 +32,4 @@ COMMON_LUNCH_CHOICES := \
     ofox_RMX3235-eng \
     shrp_RMX3235-user \
     shrp_RMX3235-userdebug \
-    shrp_RMX3235-eng \
+    shrp_RMX3235-eng
