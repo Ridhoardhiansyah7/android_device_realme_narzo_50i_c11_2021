@@ -3,8 +3,8 @@
 # Load flashlight kernel module
 load_flashlight_module()
 {
-	insmod /system/lib/sprd_flash_drv.ko || return 1
-	insmod /system/lib/flash_ic_ocp8135.ko || return 1
+	insmod /system/lib/modules/sprd_flash_drv.ko || return 1
+	insmod /system/lib/modules/flash_ic_ocp8135.ko || return 1
 }
 
 
