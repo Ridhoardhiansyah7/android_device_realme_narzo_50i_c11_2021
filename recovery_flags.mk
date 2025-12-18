@@ -8,8 +8,8 @@ BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 RELAX_USES_LIBRARY_CHECK=true
 
 # Sysfs path
-BOARD_COMMON_BACKLIGHT_PATH := "/sys/class/backlight/sprd_backlight/brightness"
-BOARD_COMMON_FLASHLIGHT_PATH := "/sys/devices/virtual/misc/sprd_flash/test"
+BOARD_COMMON_BACKLIGHT_PATH := /sys/class/backlight/sprd_backlight/brightness
+BOARD_COMMON_FLASHLIGHT_PATH := /sys/devices/virtual/misc/sprd_flash/test
 BOARD_COMMON_VIBRATOR_PATH :=
 
 # Resetprop & repacktools
