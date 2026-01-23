@@ -94,15 +94,8 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 BOARD_AVB_VBMETA_SYSTEM := system
 BOARD_AVB_BOOT_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_BOOT_ALGORITHM := SHA256_RSA4096
-BOARD_AVB_BOOT_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_BOOT_ROLLBACK_INDEX := 0
 BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 2
-
-# Make sure the security patch levels match the stock firmware to prevent rollback or anti-rollback protection issues.
-
-# Latest firmware patch
-#PLATFORM_SECURITY_PATCH := 2024-05-09
-#PLATFORM_VERSION := 11.0.0
-#VENDOR_SECURITY_PATCH := 2024-05-09
 
 # A.29 firmware patch
 PLATFORM_SECURITY_PATCH := 2022-06-05
