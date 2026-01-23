@@ -41,7 +41,7 @@ Medium checks
 - [X] all important partitions listed in mount/backup lists
 - [X] backup/restore to/from external (USB-OTG) storage
 - [X] backup/restore to/from adb
-- [X] decrypt /data (Work fine)
+- [ ] decrypt /data
 - [X] Correct date
 
 Minor checks
@@ -53,9 +53,9 @@ Minor checks
 - [X] temperature
 - [X] encrypted backups
 - [X] input devices via USB-OTG - keyboard, mouse and disks
-- [X] USB mass storage export (Bug: unstable)
+- [] USB mass storage export (Unsupported)
 - [X] set brightness
-- [ ] vibrate
-- [ ] Flashlight
+- [ ] vibrate (no sysfs found)
+- [X] Flashlight
 - [X] screenshot
 - [X] partition SD card
