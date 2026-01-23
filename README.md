@@ -53,9 +53,9 @@ Minor checks
 - [X] temperature
 - [X] encrypted backups
 - [X] input devices via USB-OTG - keyboard, mouse and disks
-- [X] USB mass storage export (Bug: unstable)
+- [ ] USB mass storage export (Unsupported)
 - [X] set brightness
-- [ ] vibrate
-- [ ] Flashlight
+- [ ] vibrate (no sysfs found)
+- [X] Flashlight
 - [X] screenshot
 - [X] partition SD card
