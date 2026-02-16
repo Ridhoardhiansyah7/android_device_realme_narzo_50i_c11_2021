@@ -23,25 +23,6 @@ See [GSMArena - Realme C11 (2021)](https://www.gsmarena.com/realme_c11_(2021)-10
 
 ---
 
-## TWRP Builds
-
-
-TWRP must be built in 64-bit(arm64); if TWRP is built in 32-bit(arm), this error will occur during startup:
-
-```bash
-Starting the UI...
-setting DRM_FORMAT_RGBX8888 and GGL_PIXEL_FORMAT_RGBX_8888
-setting DRM_FORMAT_XBGR8888 and GGL_PIXEL_FORMAT_RGBA_8888
-mmap() failed: Invalid argument
-setting DRM_FORMAT_XBGR8888 and GGL_PIXEL_FORMAT_RGBA_8888
-mmap() failed: Invalid argument
-```
-
-Already tried using other pixel formats, but the same error still occurs.
-
-
----
-
 ## Features
 Blocking checks
 - [X] Correct screen/recovery size
