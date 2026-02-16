@@ -2,22 +2,10 @@
 import /init.recovery.common.rc
 
 on init
-    setprop sys.usb.config adb
-    mkdir /dev/cpuset/system-background
-    mkdir /dev/binderfs
-    chmod 0666 /dev/binder
-    chmod 0666 /dev/hwbinder
-    chmod 0666 /dev/vndbinder
-    chmod 0755 /dev/binderfs
-    mount tracefs tracefs /sys/kernel/tracing
-    symlink /vendor/firmware /system/etc/firmware
-    setprop persist.sys.usb.config mtp,adb
-
+    write /sys/class/power_supply/usb/otg_switch 1
+    
 on fs
     start prepdecrypt
-
-on post-fs-data
-    write /sys/class/power_supply/usb/otg_switch 1
 
 on boot
     install_keyring
