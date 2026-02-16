@@ -53,9 +53,9 @@ Minor checks
 - [X] temperature
 - [X] encrypted backups
 - [X] input devices via USB-OTG - keyboard, mouse and disks
-- [ ] USB mass storage export (Unsupported)
+- [X] USB mass storage export
 - [X] set brightness
 - [ ] vibrate (no sysfs found)
-- [X] Flashlight
+- [ ] Flashlight (a12 branch only)
 - [X] screenshot
 - [X] partition SD card
