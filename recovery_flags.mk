@@ -48,10 +48,9 @@ TW_NO_BIND_SYSTEM := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
-#TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 #TW_LOAD_VENDOR_BOOT_MODULES := true
 #TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
-#TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 
 # Fix fastboot reboot
 TW_NO_FASTBOOT_BOOT := true
