@@ -1,0 +1,49 @@
+
+on fs
+    start prepdecrypt
+
+on boot
+    install_keyring
+    start keymint-1-0
+    start gatekeeper-1-0
+
+on property:vendor.sys.listener.registered=true
+    start keymint-1-0
+    start gatekeeper-1-0
+
+on property:crypto.ready=1 && property:ro.crypto.state=encrypted
+    start keymint-1-0
+    start gatekeeper-1-0
+
+on property:crypto.ready=1 && property:hwservicemanager.ready=true
+    start keymint-1-0
+    start gatekeeper-1-0
+
+on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted || property:twrp.decrypt.done=true
+    stop keymint-1-0
+    stop gatekeeper-1-0
+
+service prepdecrypt /system/bin/prepdecrypt.sh
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service keystore2 /system/bin/keystore2 /data/misc/keystore
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service keymint-1-0 /system/bin/hw/android.hardware.security.keymint@1.0-unisoc.service
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
