@@ -8,6 +8,55 @@
 -->
 <manifest version="2.0" type="device" target-level="5">
     <hal format="hidl">
+        <name>android.hardware.gatekeeper</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGatekeeper</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.security.keymint</name>
+        <version>1</version>
+        <interface>
+            <name>IKeyMintDevice</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.security.secureclock</name>
+        <version>1</version>
+        <interface>
+            <name>ISecureClock</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.security.sharedsecret</name>
+        <version>1</version>
+        <interface>
+            <name>ISharedSecret</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.security.keymint</name>
+        <version>1</version>
+        <interface>
+            <name>IRemotelyProvisionedComponent</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.system.keystore2</name>
+        <version>1</version>
+        <interface>
+            <name>IKeystoreService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
         <version>6.0</version>
