@@ -55,11 +55,27 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl.recovery \
     android.hardware.boot@1.1-service
 
+# Keystore Hal
+PRODUCT_PACKAGES += \
+    android.system.keystore2
+
+# Keymint/Security
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint \
+    android.hardware.security.secureclock \
+    android.hardware.security.sharedsecret
+
 # bootctrl HAL    
 PRODUCT_PACKAGES += \
     bootctrl.default \
     bootctrl.unisoc \
     bootctrl.unisoc.recovery
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery \
+    fastbootd
  
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -71,13 +87,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl    
-    
-# Fastbootd
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery \
-    fastbootd
+
 
 # Hidl
-PRODUCT_ENFORCE_VINTF_MANIFEST := false
+#PRODUCT_ENFORCE_VINTF_MANIFEST := false
 
