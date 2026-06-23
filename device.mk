@@ -43,7 +43,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_vendor=ext4 \
     POSTINSTALL_OPTIONAL_vendor=true    
 
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
@@ -80,5 +79,5 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Hidl
-#PRODUCT_ENFORCE_VINTF_MANIFEST := false
+PRODUCT_ENFORCE_VINTF_MANIFEST := false
 
